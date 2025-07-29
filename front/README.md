@@ -25,7 +25,7 @@ Tailwind-класи для стилізації
 1. Клонувати репозиторий:
    ```bash
    git clone  https://github.com/ViktoriaGavrilenko/online-course-new.git
-   cd online-course-new
+   cd online-course-new/front
 
 2. Встановити залежності:
    npm install
