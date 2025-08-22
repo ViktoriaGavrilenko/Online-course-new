@@ -1,6 +1,6 @@
 import React from "react";
-import TitleSection from "./TitleSection.jsx";
-import Button from "./Button.jsx";
+import TitleSection from "./TitleSection.tsx";
+import Button from "./Button.tsx";
 
 const contentItems = [
     {

@@ -14,7 +14,7 @@ const bottomNavItems = [
 
 const Footer = () => {
     return (
-        <container className="flex flex-col justify-center items-center w-full 2xl:max-w-[1920px]
+        <div className="flex flex-col justify-center items-center w-full 2xl:max-w-[1920px]
                               gap-5 xl:gap-7 2xl:gap-12 bg-white">
             <div className="flex flex-col justify-between w-full md:flex-row px-24 py-12">
                 <div className="flex flex-col px-2 gap-[30px] h-[170px] xl:w-[304px] xl:h-[174px]
@@ -86,7 +86,7 @@ const Footer = () => {
             <div className="flex sm:ju font-normal text-sm 2xl:text-lg text-[#656567]">
                 © 2023 Skillbridge. All rights reserved.
             </div>
-        </container>
+        </div>
     )
 }
 export default Footer;
