@@ -1,6 +1,12 @@
 import React from "react";
 
-const TitleSection = ({title, text, buttonText}) => {
+interface TitleSectionProps {
+    title: string;
+    text: string;
+    buttonText: string;
+}
+
+const TitleSection: React.FC<TitleSectionProps> = ({title, text, buttonText}) => {
     return (
         <div className="flex flex-col justify-start w-full px-3 sm:flex-row sm:items-end sm:justify-between
                         xl:px-3 2xl:px-3">

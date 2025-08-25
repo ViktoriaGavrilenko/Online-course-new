@@ -1,8 +1,8 @@
 import React from "react";
-import TitleSection from "./TitleSection.tsx";
-import OneTestimonial from "./OneTestimonial.tsx";
+import TitleSection from "./TitleSection";
+import OneTestimonial from "./OneTestimonial";
 
-const testimonialsItems = [
+export const testimonialsItems = [
     {
         description: "The web design course provided a solid foundation for me. The instructors were " +
             "knowledgeable and supportive, and the interactive learning environment was engaging. I highly " +
@@ -43,8 +43,7 @@ function OurTestimonials() {
                fringilla feugiat senectus in."
                 buttonText="View All"
             />
-            <div className="flex flex-col sm:flex-row flex-wrap w-full h-full gap-5 2xl:gap-[30px]
-            outline-1 outline-green-600">
+            <div className="flex flex-col sm:flex-row flex-wrap w-full h-full gap-5 2xl:gap-[30px]">
                 {
                     testimonialsItems.map(({description, img, name}, index) => (
                         <OneTestimonial

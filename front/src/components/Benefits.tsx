@@ -1,5 +1,5 @@
 import React from "react";
-import TitleSection from "./TitleSection.tsx";
+import TitleSection from "./TitleSection";
 
 const cardItems = [
     {

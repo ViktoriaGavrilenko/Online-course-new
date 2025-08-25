@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import AccordionItem, {questionItems} from "./AccordionItem.tsx";
+import AccordionItem, {questionItems} from "./AccordionItem";
 
 function Questions() {
     const [openIndex, setOpenIndex] = useState(null);

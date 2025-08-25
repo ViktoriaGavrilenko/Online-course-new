@@ -1,7 +1,7 @@
 import React from "react";
-import Footer from "../components/Footer.tsx";
+import Footer from "../components/Footer";
 import {Outlet} from "react-router-dom";
-import Header from "../components/Header.tsx";
+import Header from "../components/Header";
 
 const LayoutSite = () => {
     return (
