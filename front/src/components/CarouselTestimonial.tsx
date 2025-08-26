@@ -3,16 +3,19 @@ import OneTestimonial from "./OneTestimonial";
 import TitleSection from "./TitleSection";
 
 interface Testimonial {
-    description: string;
-    img: string;
-    name: string;
+  description: string;
+  img: string;
+  name: string;
 }
 interface CarouselTestimonialProps {
-    items: Testimonial[];
-    cardClassName?: string;
+  items: Testimonial[];
+  cardClassName?: string;
 }
 
-const CarouselTestimonial: React.FC<CarouselTestimonialProps> = ({ items, cardClassName }) => {
+const CarouselTestimonial: React.FC<CarouselTestimonialProps> = ({
+  items,
+  cardClassName,
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevSlide = () => {
@@ -24,7 +27,7 @@ const CarouselTestimonial: React.FC<CarouselTestimonialProps> = ({ items, cardCl
   const currentTestimonial = items[currentIndex];
 
   return (
-    <div className={`flex flex-col items-center gap-4 ${cardClassName}`}>
+    <div className={`flex flex-col items-center gap-4 xl:gap-[10px] 2xl:gap-[15px] px-2 xl:px-4 2xl:px-10 ${cardClassName}`}>
       <TitleSection
         title="Students Testimonials"
         text="Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet
@@ -32,8 +35,12 @@ const CarouselTestimonial: React.FC<CarouselTestimonialProps> = ({ items, cardCl
                     senectus in."
         buttonText=""
       />
-      <OneTestimonial {...currentTestimonial} index={currentIndex}  className={cardClassName}
-      buttonText="Read More"/>
+      <OneTestimonial
+        {...currentTestimonial}
+        index={currentIndex}
+        className={cardClassName}
+        buttonText="Read More"
+      />
       <div className="flex justify-end items-center xl:gap-[10px] 2xl:gap-[15px] px-2 xl:px-4 2xl:px-6">
         <button
           onClick={prevSlide}
