@@ -27,7 +27,8 @@ const CarouselTestimonial: React.FC<CarouselTestimonialProps> = ({
   const currentTestimonial = items[currentIndex];
 
   return (
-    <div className={`flex flex-col items-center gap-4 xl:gap-[10px] 2xl:gap-[15px] px-2 xl:px-4 2xl:px-10 ${cardClassName}`}>
+    <div className={`flex flex-col items-center gap-4 xl:gap-[10px] 2xl:gap-[15px] px-2 xl:px-4 
+    2xl:px-10 ${cardClassName}`}>
       <TitleSection
         title="Students Testimonials"
         text="Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet

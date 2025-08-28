@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 const navbarItems = [
     {to:"/", label:"Home"},
-    {to:"/courses", label:"Courses"},
+    {to:"/online_courses", label:"Courses"},
     {to:"/about", label:"About Us"},
     {to:"/pricing", label:"Pricing"},
     {to:"/contact", label:"Contact"},

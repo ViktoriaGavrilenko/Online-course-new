@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { FormState, FormErrors } from "../types/form";
+import { useNavigate } from "react-router-dom";
 
 interface Props {}
 
 const SignUp: React.FC<Props> = () => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState<FormErrors>({});
   const [form, setForm] = useState<FormState>({
@@ -50,6 +52,9 @@ const SignUp: React.FC<Props> = () => {
     });
     setForm({ fullName: "", email: "", password: "" });
   };
+  const handleLoginClick = (): void => {
+    navigate("/login_page");
+    }
 
   return (
     <div
@@ -158,10 +163,12 @@ const SignUp: React.FC<Props> = () => {
             Login with Google
           </div>
         </button>
-        <button className="flex justify-center items-center gap-[6px] 2xl:gap-[6px]">
+        <button 
+            onClick={handleLoginClick}
+            className="flex justify-center items-center gap-[6px] 2xl:gap-[6px] cursor-pointer">
           <div>
-            Already have an account? Login{" "}
-            <a className="underline cursor-pointer">Sign Up</a>
+            Already have an account? 
+            <a className="underline">Login</a>
           </div>
           <img src="/icons/out_up.svg" alt="" />
         </button>

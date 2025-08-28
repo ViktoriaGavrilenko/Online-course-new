@@ -4,19 +4,20 @@ import CarouselTestimonial from "../components/CarouselTestimonial";
 import { testimonialsItems } from "../components/OurTestimonials";
 
 function LoginPage() {
-    return (
-       <div className="flex items-center gap-[100px]">
-             <div className="w-2/3">
-               <CarouselTestimonial
-                 items={testimonialsItems}
-                 cardClassName="flex gap-10"
-               />
-             </div>
-             <div className="w-1/3">
-               <Login />
-             </div>
-           </div>
-    );
+  return (
+    <div className="flex flex-col sm:flex-row items-center gap-[50px] sm:gap-10 lg:gap-15 xl:gap-20 
+          2xl:gap-[100px] w-full">
+      <div className="order-2 sm:order-1">
+        <CarouselTestimonial
+          items={testimonialsItems}
+          cardClassName="flex gap-10"
+        />
+      </div>
+      <div className="order-1 sm:order-2">
+        <Login />
+      </div>
+    </div>
+  );
 }
 
 export default LoginPage;

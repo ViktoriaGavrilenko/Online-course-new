@@ -10,7 +10,7 @@ const SighUpPage: React.FC<Props> = () => {
   const [password, setPassword] = useState("");
 
   return (
-    <div className="flex items-center gap-[100px]">
+    <div className="flex items-center gap-[100px] w-full ">
       <div className="w-2/3">
         <CarouselTestimonial
           items={testimonialsItems}

@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
+import Button from "./Button";
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
@@ -45,28 +46,26 @@ const Header: React.FC = () => {
         </div>
         <div
           className="flex gap-5 xl:gap-[30px] w-[151px] h-[45px] xl:w-[169px] xl:h-[45px]
-                2xl:w-[214px] 2xl:h-[55px]"
+                2xl:w-[234px] 2xl:h-[55px]"
         >
-          <button
-            className="flex items-center justify-center
+          <Button
+            title_but="Sign Up"
+            className="flex items-center justify-center 2xl:px-4 2xl:py-7
                                        font-normal text-[#262626]
                                        text-sm 2xl:text-lg
                                        rounded-md 2xl:rounded-lg
                                        w-full h-full cursor-pointer"
             onClick={handleSignUpClick}
-          >
-            Sign Up
-          </button>
-          <button
-            className="flex items-center justify-center
+          />
+          <Button
+            title_but="Login"
+            className="flex items-center justify-center 2xl:px-7 2xl:py-7
                                        font-normal text-white bg-orange-400
                                        text-sm 2xl:text-lg
                                        rounded-md 2xl:rounded-lg
                                        w-full h-full cursor-pointer"
             onClick={handleLoginClick}
-          >
-            Login
-          </button>
+          />
         </div>
       </div>
     </header>

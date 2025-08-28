@@ -52,29 +52,29 @@ const Login: React.FC<Props> = () => {
     }
     navigate("/");
   };
+  const handleSignUpClick = (): void => {
+    navigate("/signUp_page");
+  }
 
   return (
     <div
-      className="flex flex-col gap-[30px] xl:gap-10 2xl:gap-[50px] w-full h-full xl:w-[540px] 2xl:w-[660px]
-                py-6 xl:py-8 2xl:py-10 bg-white"
-    >
+      className="flex flex-col gap-[30px] xl:gap-10 2xl:gap-[50px] w-full h-full sm:w-[300px] lg:w-[520px] xl:w-[540px] 2xl:w-[660px]
+                py-6 xl:py-8 2xl:py-10 bg-white">
       <div className="flex flex-col items-center gap-2 2xl:gap-3 w-full h-full xl:px-8 2xl:px-10">
         <div className="flex justify-center items-center font-semibold text-[28px] xl:text-[38px] 2xl:text-[48px]">
           Login
         </div>
-        <div className="flex text-[#4C4C4D] font-medium xl:text-base 2xl:text-lg">
+        <div className="flex text-center text-[#4C4C4D] font-medium xl:text-base 2xl:text-lg">
           Welcome back! Please log in to access your account.
         </div>
       </div>
       <div
-        className="flex flex-col gap-6 2xl:gap-[30px] w-full h-full xl:px-8 2xl:px-10
-                    font-medium text-sm xl:text-base 2xl:text-lg"
-      >
+        className="flex flex-col gap-6 2xl:gap-[30px] w-full h-full px-4 sm:px-4 lg:px-4 xl:px-4 2xl:px-4
+                    font-medium text-sm xl:text-base 2xl:text-lg">
         {!forgotPasswordMode ? (
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-5 2xl:gap-6"
-          >
+            className="flex flex-col gap-5 2xl:gap-6 w-full h-full xl:px-4 2xl:px-4">
             <div className="flex flex-col gap-[10px] 2xl:gap-[14px]">
               <div className="flex text-[#262626] ">
                 Email
@@ -121,7 +121,7 @@ const Login: React.FC<Props> = () => {
                 />
               </div>
               <div className="flex items-center justify-end text-[#4C4C4D]">
-                <button>Forgot Password?</button>
+                <button className="cursor-pointer">Forgot Password?</button>
               </div>
             </div>
             <div className="flex items-center gap-2 2xl:gap-[10px]">
@@ -173,17 +173,17 @@ const Login: React.FC<Props> = () => {
         </div>
         <button
           className="flex justify-center gap-[14px] 2xl:gap-[14px] px-30 py-4 2xl:px-40 
-              2xl:py-5 rounded-[10px] cursor-pointer bg-[#F1F1F3]"
-        >
+              2xl:py-5 rounded-[10px] cursor-pointer bg-[#F1F1F3]">
           <img src="/icons/google.svg" alt="" />
-          <div className="flex font-normal text-lg text-[#262626]">
+          <div className="flex items-center font-medium text-sm 2xl:font-normal 2xl:text-lg text-[#262626]">
             Login with Google
           </div>
         </button>
-        <button className="flex justify-center items-center gap-[6px] 2xl:gap-[6px]">
+        <button onClick={handleSignUpClick}
+            className="flex justify-center items-center gap-[6px] 2xl:gap-[6px] cursor-pointer">
           <div>
             Don’t have an account?{" "}
-            <a className="underline cursor-pointer">Sign Up</a>
+            <a className="underline">Sign Up</a>
           </div>
           <img src="/icons/out_up.svg" alt="" />
         </button>

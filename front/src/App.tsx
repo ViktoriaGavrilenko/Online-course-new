@@ -4,6 +4,7 @@ import LayoutSite from "./pages/LayoutSite.jsx";
 import Home from "./pages/Home.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import SignUpPage from "./pages/SignUpPage.js";
+import OnlineCourses from "./pages/OnlineCourses.js";
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
                         <Route index element={<Home/>}/>
                         <Route path="/login_page" element={<LoginPage/>}/>
                         <Route path="/signUp_page" element={<SignUpPage/>}/>
+                        <Route path="/online_courses" element={<OnlineCourses/>}/>
                     </Route>
                 </Route>
             </Routes>

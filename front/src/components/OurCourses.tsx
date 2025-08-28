@@ -108,10 +108,11 @@ function OurCourses() {
                                         </div>
                                     </div>
                                 </div>
-                                <button className='flex justify-center items-center color-[#262626] bg-[#F1F1F3]
+                                <Button 
+                                 title_but="Get it Now"
+                                 className='flex justify-center items-center color-[#262626] bg-[#F1F1F3]
                                  font-medium rounded-md text-sm px-2 py-2 xl:px-2 xl:py-2 2xl:px-2 2xl:py-2
-                                 2xl:rounded-lg 2xl:text-lg'>Get it Now
-                                </button>
+                                 2xl:rounded-lg 2xl:text-lg'/>
                             </div>
                         </div>
                     ))

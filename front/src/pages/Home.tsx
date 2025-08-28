@@ -1,12 +1,12 @@
 import React from 'react';
-import Hero from "../components/Hero.tsx";
-import ContainerIcons from "../components/ContainerIcons.tsx";
-import ContainerVideo from "../components//ContainerVideo.tsx";
-import Benefits from "../components/Benefits.tsx";
-import OurCourses from "../components/OurCourses.tsx";
-import OurTestimonials from "../components/OurTestimonials.tsx";
-import OurPricing from "../components/OurPricing.tsx";
-import Questions from "../components/Questions.tsx";
+import Hero from "../components/Hero";
+import ContainerIcons from "../components/ContainerIcons";
+import ContainerVideo from "../components//ContainerVideo";
+import Benefits from "../components/Benefits";
+import OurCourses from "../components/OurCourses";
+import OurTestimonials from "../components/OurTestimonials";
+import OurPricing from "../components/OurPricing";
+import Questions from "../components/Questions";
 
 const Home = () => {
     return (
