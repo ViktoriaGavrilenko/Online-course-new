@@ -1,5 +1,7 @@
 import React from "react";
 import WebDesignFundamentals from "../components/WebDesignFundamentals";
+import UI_UX_Design from "../components/UI_UX_Design";
+import MobileApp from "../components/MobileApp";
 
 interface Props {}
 
@@ -21,8 +23,10 @@ const OnlineCourses: React.FC<Props> = () => {
           fit for your learning journey.
         </div>
       </div>
-      <div className="flex self-center justify-center 2xl:w-[1596px] 2xl:h-[5362px] outline-1 outline-red-500">
+      <div className="flex flex-col self-center 2xl:w-[1596px] 2xl:h-[5362px] outline-1 outline-red-500">
         <WebDesignFundamentals/>
+        <UI_UX_Design/>
+        <MobileApp/>
       </div>
     </div>
   );
