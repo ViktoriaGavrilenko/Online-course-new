@@ -12,6 +12,7 @@ const SignUp: React.FC<Props> = () => {
     fullName: "",
     email: "",
     password: "",
+    isChecked: false,
   });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
@@ -19,16 +20,35 @@ const SignUp: React.FC<Props> = () => {
 
     const newErrors: FormErrors = {};
     let valid = true;
-    if (!form.fullName) {
-      newErrors.fullNane = "Ім'я не може бути пустим";
+    if (!form.fullName.trim()) {
+      newErrors.fullName = "Ім'я не може бути пустим";
+      valid = false;
+    } else if(form.fullName.length < 2){
+      newErrors.fullName =  "Ім'я має містити щонайменше 2 символи";
+      valid = false;
+    } else if(!/^[A-Za-zА-Яа-яІіЇїЄє\s]+$/.test(form.fullName)){
+      newErrors.fullName = "Ім'я може містити лише букви";
       valid = false;
     }
-    if (!form.email) {
+
+    if (!form.email.trim()) {
       newErrors.email = "Email не може бути пустим";
       valid = false;
+    } else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)){
+      newErrors.email = "Некоректний email";
+      valid = false;
     }
-    if (!form.password) {
+
+    if (!form.password.trim()) {
       newErrors.password = "Пароль не може бути пустим";
+      valid = false;
+    }else if (form.password.length < 6) {
+      newErrors.password = "Пароль має бути не менше 6 символів";
+      valid = false;
+    }
+
+     if(!form.isChecked){
+      newErrors.isChecked = "Ви повинні погодитись з умовами";
       valid = false;
     }
     setErrors(newErrors);
@@ -50,11 +70,12 @@ const SignUp: React.FC<Props> = () => {
       email: form.email,
       password: form.password,
     });
-    setForm({ fullName: "", email: "", password: "" });
+    setForm({ fullName: "", email: "", password: "" , isChecked: false});
   };
+
   const handleLoginClick = (): void => {
     navigate("/login_page");
-    }
+    } 
 
   return (
     <div
@@ -75,7 +96,9 @@ const SignUp: React.FC<Props> = () => {
       >
         <form onSubmit={handleSubmit} className="flex flex-col gap-5 2xl:gap-6">
           <div className="flex flex-col gap-[10px] 2xl:gap-[14px]">
-            <div className="flex text-[#262626] ">Full Name</div>
+            <div className="flex text-[#262626] ">Full Name
+               {errors.fullName && <div className="text-red-500">{errors.fullName}</div>}
+            </div>
             <input
               type="text"
               value={form.fullName}
@@ -91,7 +114,7 @@ const SignUp: React.FC<Props> = () => {
             <div className="flex text-[#262626] ">
               Email
               {errors.email && (
-                <div className="text-red-500">- {errors.email}</div>
+                <span className="text-red-500">- {errors.email}</span>
               )}
             </div>
             <input
@@ -133,13 +156,18 @@ const SignUp: React.FC<Props> = () => {
               className="flex items-center justify-end text-[#4C4C4D]"
             ></div>
           </div>
-          <div className="flex items-center gap-2 2xl:gap-[10px]">
-            <input type="checkbox" className="flex 2xl:w-[22px] 2xl:h-[22px]" />
+          <div className="flex flex-col self-start items-center gap-2 2xl:gap-[10px]">
+            {errors.isChecked && (<div className="text-red-500 ml-2">{errors.isChecked}</div>)}
+           <div className="flex gap-4 self-start items-center">
+             <input type="checkbox" 
+                   onChange={(e)=> (setForm((prev)=> ({... prev,isChecked: e.target.checked})))}
+                   className="flex 2xl:w-[22px] 2xl:h-[22px]" />
             <div className="flex text-[#656567] font-normal text-lg">
               I agree with <a className="mx-1 underline offset">Terms of Use</a>
               and
               <a className="mx-1 underline offset">Privacy Policy</a>
             </div>
+           </div>
           </div>
           <button
             type="submit"

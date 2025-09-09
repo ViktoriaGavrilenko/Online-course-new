@@ -1,6 +1,19 @@
 import React from "react";
 
-const questionItems = [
+export interface AccordionItemProps {
+    title: string;
+    answer: string;
+    text_button: string;
+    isOpen: boolean;
+    onToggle: ()=> void;
+};
+export interface QuestionItem {
+    title: string;
+    answer: string;
+    text_button: string;
+};
+
+ const questionItems: QuestionItem[] = [
     {
         title: "Can I enroll in multiple courses at once?",
         answer: "Absolutely! You can enroll in multiple courses simultaneously and access them at your convenience.",
@@ -28,7 +41,7 @@ const questionItems = [
     },
 ]
 
-function AccordionItem({title, answer, text_button, isOpen, onToggle}) {
+const AccordionItem: React.FC<AccordionItemProps> = ({title, answer, text_button, isOpen, onToggle}) => {
 
     return (
         <div className="flex flex-col justify-center items-center gap-5 w-full h-full rounded-[10px]

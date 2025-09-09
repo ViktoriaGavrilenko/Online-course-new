@@ -24,4 +24,19 @@ export const mobileApp: CurriculumItem[] = [
   { number: "03", description: "Fundamentals of Kotlin Programming (Android)" },
   { number: "04", description: "Building User Interfaces" },
   { number: "05", description: "App Deployment and Testing" },
-]
+];
+export const graphicDesign: CurriculumItem[] = [
+  { number: "01", description: "Introduction to Graphic Design" },
+  { number: "02", description: "Typography and Color Theory" },
+  { number: "03", description: "Layout Design and Composition" },
+  { number: "04", description: "Image Editing and Manipulation" },
+  { number: "05", description: "Designing for Print and Digital Media" },
+];
+export const frontEndWeb: CurriculumItem[] = [
+  { number: "01", description: "HTML Fundamentals" },
+  { number: "02", description: "CSS Styling and Layouts" },
+  { number: "03", description: "JavaScript Basics" },
+  { number: "04", description: "Building Responsive Websites" },
+  { number: "05", description: "Introduction to Bootstrap and React" },
+];
+

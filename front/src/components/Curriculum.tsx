@@ -7,8 +7,8 @@ interface CurriculumProps {
 
 const Curriculum: React.FC<CurriculumProps> = ({items}) => {
   return (
-    <div className="flex flex-col 2xl:w-[1496px] 2xl:h-[252px] border-1 border-[#F1F1F3]">
-        <div className="flex font-semibold px-6 py-4 text-[22px] text-[#262626] 
+    <div className="flex flex-col 2xl:h-[252px] border-1 border-[#F1F1F3]">
+        <div className="flex font-semibold py-4 text-[22px] text-[#262626] 
         border-1 border-[#F1F1F3]">
           Curriculum
         </div>

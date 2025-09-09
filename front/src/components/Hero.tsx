@@ -23,7 +23,6 @@ function Hero() {
           />
         </div>
 
-        {/* Подзаголовок */}
         <div className="flex flex-col gap-2 sm:gap-3">
           <p className="text-xl sm:text-2xl lg:text-[32px] font-medium">
             with Online Design and Development Courses.
@@ -34,7 +33,6 @@ function Hero() {
         </div>
       </div>
 
-      {/* Кнопки */}
       <div className="flex gap-4 flex-wrap justify-center 2xl:w-[366px] 2xl:h-[63px]">
         <Button
           title_but="Explore Courses"

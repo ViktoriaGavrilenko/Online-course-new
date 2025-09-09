@@ -1,13 +1,17 @@
 export interface FormState {
-    fullName?: string;
+    fullName: string;
     email: string;
     password: string;
     rememberMe?: boolean;
+    isChecked: boolean;
   }
   
   export interface FormErrors {
-    fullNane?: string;
+    fullName?: string;
     email?: string;
     password?: string;
+    isChecked?: string;
   }
+
+  const newErrors: Partial<FormErrors> = {};
  

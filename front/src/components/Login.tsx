@@ -11,37 +11,12 @@ const Login: React.FC<Props> = () => {
   const [forgotEmail, setForgotEmail] = useState("");
   const [errors, setErrors] = useState<FormErrors>({});
   const [form, setForm] = useState<FormState>({
+    fullName: "",
     email: "",
     password: "",
     rememberMe: false,
+    isChecked: false,
   });
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
-    e.preventDefault();
-    let valid = true;
-    const newErrors: FormErrors = {};
-    if (!form.email) {
-      newErrors.email = "Email не може бути пустим";
-      valid = false;
-    } else {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(form.email)) {
-        newErrors.email = "Додайте корректний email";
-        valid = false;
-      }
-    }
-    if (!form.password) {
-      newErrors.password = "Додайте пароль";
-      valid = false;
-    } else if (form.password.length < 6) {
-      newErrors.password = "Пароль має бути не менше 6 символів";
-    }
-    setErrors(newErrors);
-    if (!valid) return;
-    console.log(form.email, form.password, form.rememberMe);
-
-    setForm({ email: "", password: "", rememberMe: false });
-  };
 
   const handleLogin = (): void => {
     const saveEmail = localStorage.getItem("email");
@@ -73,7 +48,6 @@ const Login: React.FC<Props> = () => {
                     font-medium text-sm xl:text-base 2xl:text-lg">
         {!forgotPasswordMode ? (
           <form
-            onSubmit={handleSubmit}
             className="flex flex-col gap-5 2xl:gap-6 w-full h-full xl:px-4 2xl:px-4">
             <div className="flex flex-col gap-[10px] 2xl:gap-[14px]">
               <div className="flex text-[#262626] ">
@@ -121,7 +95,7 @@ const Login: React.FC<Props> = () => {
                 />
               </div>
               <div className="flex items-center justify-end text-[#4C4C4D]">
-                <button className="cursor-pointer">Forgot Password?</button>
+                <button type="button" className="cursor-pointer">Forgot Password?</button>
               </div>
             </div>
             <div className="flex items-center gap-2 2xl:gap-[10px]">

@@ -1,18 +1,23 @@
 import React from "react";
+import Button from "./Button";
 
 interface TitleSectionProps {
   title: string;
   text: string;
+  title_but: string;
   buttonText?: string;
   onButtonClick?: () => void;
+  className: string;
 }
 
 const TitleSection: React.FC<TitleSectionProps> = ({
   title,
   text,
-  buttonText,
+  title_but,
   onButtonClick,
+  className
 }) => {
+
   return (
     <div
       className="flex flex-col justify-start w-full px-3 sm:flex-row sm:items-end sm:justify-between
@@ -29,15 +34,13 @@ const TitleSection: React.FC<TitleSectionProps> = ({
           {text}
         </div>
       </div>
-      {buttonText && (
-        <button
+        <Button
           onClick={onButtonClick}
-          className="flex justify-center items-center font-medium px-4 py-2 rounded-md text-sm
-                  xl:px-5 xl:py-2.5 2xl:px-6 2xl:py-3 2xl:text-lg 2xl:rounded-lg bg-[#FCFCFD]"
-        >
-          {buttonText}
-        </button>
-      )}
+          title_but={title_but}
+          className={`flex justify-center items-center font-normal w-[86px] h-[34px] rounded-md
+           text-sm 2xl:w-[107px] 2xl:h-[43px] 2xl:rounded-lg 2xl:text-lg
+           border-1 border-solid border-[#F1F1F3] ${className}`}
+        />
     </div>
   );
 };

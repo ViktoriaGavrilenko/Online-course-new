@@ -28,9 +28,8 @@ const Header: React.FC = () => {
         </span>
       </div>
       <div
-        className="w-full mx-auto
-                            h-[73px] xl:h-[81px] 2xl:h-[99px]
-                            flex justify-between items-center"
+        className="w-full mx-auto h-[73px] xl:h-[81px] 2xl:h-[99px] xl:max-w-[1279px] 
+        2xl:max-w-[1597px] flex justify-between items-center"
       >
         <div className="flex items-center gap-[50px] w-[390px] xl:w-[502px] 2xl:w-[597px]">
           <button onClick={handleHomeClick} className="cursor-pointer">
