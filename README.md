@@ -23,6 +23,9 @@ This project is a frontend application that demonstrates a responsive UI for an 
 - Tailwind utility classes for styling
 - Semantic HTML5 markup
 
+## Demo 
+https://youtu.be/_y1HpHPUX7w
+
 ## 📸 Screenshot
 ![Project Preview](https://raw.githubusercontent.com/ViktoriaGavrilenko/online-course-new/main/front/public/img/laptop.png)
 
